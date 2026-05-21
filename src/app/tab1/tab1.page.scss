@@ -1,0 +1,60 @@
+ion-content {
+  --background: #f4f5f8;
+}
+
+ion-card {
+  background: linear-gradient(135deg, #6a11cb, #0d070d);
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+
+  margin: 20px auto;
+  display: block;
+
+  border-radius: 50%;
+
+  border: 4px solid #7700b2;
+}
+
+ion-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+ion-card-content p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: white;
+}
+
+.github-icon {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 18px;
+
+  text-decoration: none;
+}
+
+.github-icon ion-icon {
+  font-size: 38px;
+  color: #ffffff;
+
+  transition: 0.3s;
+}
+
+.github-icon ion-icon:hover {
+  transform: scale(1.15);
+  color: #7700b2;
+}

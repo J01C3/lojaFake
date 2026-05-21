@@ -1,0 +1,167 @@
+ion-content {
+  --background: linear-gradient(135deg, #6a11cb, #0d070d);
+  overflow-x: hidden;
+}
+
+/* CARD */
+ion-card {
+  background: white;
+  border-radius: 20px;
+
+  padding: 12px;
+  margin-top: 30px;
+
+  width: 100%;
+  max-width: 300px;
+  height: 495px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* IMAGEM */
+img {
+  width: 100%;
+  height: 140px;
+
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto 10px auto;
+
+  flex-shrink: 0;
+}
+
+/* HEADER */
+ion-card-header {
+  width: 100%;
+  padding: 6px 0 4px 0;
+}
+
+/* TITULO */
+ion-card-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* SUBTITULO */
+ion-card-subtitle {
+  font-size: 12px;
+  color: #777;
+
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+/* CONTENT */
+ion-card-content {
+  width: 100%;
+  padding: 4px 0 0 0;
+}
+
+/* DESCRIÇÃO */
+.description {
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: #555;
+
+  margin-top: 6px;
+  margin-bottom: 10px;
+
+  word-break: break-word;
+
+  max-height: 95px;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+/* PREÇO */
+.price {
+  font-size: 25px;
+  font-weight: bold;
+
+  color: #6a11cb;
+
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ÍCONE CARRINHO */
+.cart-icon {
+  font-size: 22px;
+  color: #6a11cb;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.2);
+  color: #4b0fb3;
+}
+
+/* BOTÕES */
+.buttons {
+  margin-top: 12px;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+
+  width: 92%;
+  max-width: 300px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons ion-button {
+  flex: 1;
+}
+
+/* BOTÕES STYLE */
+ion-button {
+  --background: white;
+  --color: #6a11cb;
+
+  --border-radius: 14px;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ion-button[fill="outline"] {
+  --background: transparent;
+  --color: white;
+  --border-color: white;
+}
+
+/* LOADING */
+.loading {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}

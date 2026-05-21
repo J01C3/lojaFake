@@ -1,0 +1,65 @@
+<ion-content class="ion-padding">
+
+  <ion-card *ngIf="products.length > 0; else loading">
+
+    <img
+      [src]="products[index].image"
+      [alt]="products[index].title"
+    />
+
+    <ion-card-header>
+
+      <ion-card-subtitle>
+        Produto {{ index + 1 }} de {{ products.length }}
+      </ion-card-subtitle>
+
+      <ion-card-title>
+        {{ products[index].title }}
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p class="description">
+        {{ products[index].description }}
+      </p>
+
+      <h2 class="price">
+        R$ {{ products[index].price }}
+
+        <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+      </h2>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ng-template #loading>
+    <div class="loading">
+      <p>Carregando produtos...</p>
+    </div>
+  </ng-template>
+
+  <div class="buttons" *ngIf="products.length > 0">
+
+    <ion-button
+      fill="outline"
+      expand="block"
+      (click)="previousProduct()"
+      [disabled]="index === 0"
+    >
+      Produto Anterior
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      (click)="nextProduct()"
+      [disabled]="index === products.length - 1"
+    >
+      Próximo Produto
+    </ion-button>
+
+  </div>
+
+</ion-content>
