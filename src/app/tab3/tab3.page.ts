@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { MatButtonModule } from '@angular/material/button';
+
 import { ProductsService } from '../services/products';
+
 import { addIcons } from 'ionicons';
 import { cartOutline } from 'ionicons/icons';
 
@@ -11,39 +14,35 @@ import { cartOutline } from 'ionicons/icons';
   styleUrls: ['./tab3.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     IonicModule,
-    CommonModule
+    MatButtonModule
   ]
 })
-
 export class Tab3Page implements OnInit {
 
   products: any[] = [];
-  showProducts = false;
+  show = false;
 
-  constructor(
-    private productService: ProductsService
-  ) {
-    addIcons({ cartOutline });
+  constructor(private service: ProductsService) {
+
+    // ícone do carrinho
+    addIcons({
+      'cart-outline': cartOutline
+    });
+
   }
 
-  ngOnInit(): void {
-    this.loadProducts();
-  }
-
-  loadProducts(): void {
-    this.productService.getProducts().subscribe({
-      next: (data: any[]) => {
-        this.products = data;
+  ngOnInit() {
+    this.service.getProducts().subscribe({
+      next: (res) => {
+        this.products = res;
       },
-      error: (err) => {
-        console.error('Erro ao carregar produtos:', err);
-      }
+      error: (err) => console.error('Erro ao carregar produtos:', err)
     });
   }
 
-  toggleProducts(): void {
-    this.showProducts = !this.showProducts;
+  toggle() {
+    this.show = !this.show;
   }
-
 }

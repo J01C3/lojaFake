@@ -1,41 +1,40 @@
 <ion-content class="ion-padding">
 
-  <!-- BOTÃO ÚNICO -->
-  <ion-button
-    expand="block"
-    (click)="toggleProducts()"
-    class="toggle-btn"
-  >
-    {{ showProducts ? 'Ocultar Produtos' : 'Mostrar Produtos' }}
-  </ion-button>
+<ion-button
+  class="toggle-btn"
+  expand="block"
+  fill="solid"
+  (click)="toggle()">
+  {{ show ? 'Ocultar produtos' : 'Mostrar produtos' }}
+</ion-button>
 
-  <ng-container *ngIf="showProducts">
+  <div *ngIf="show">
 
-    <ion-card *ngFor="let product of products">
+    <ion-card *ngFor="let p of products; let i = index">
 
-      <img [src]="product.image" />
+      <div class="counter">
+        {{ i + 1 }} / {{ products.length }}
+      </div>
+
+      <img [src]="p.image" />
 
       <ion-card-header>
-        <ion-card-title>
-          {{ product.title }}
+        <ion-card-title class="title">
+          {{ p.title }}
         </ion-card-title>
+
+        <ion-card-subtitle class="price">
+          <ion-icon name="cart-outline"></ion-icon>
+          R$ {{ p.price }}
+        </ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-
-        <p class="description">
-          {{ product.description }}
-        </p>
-
-        <h2 class="price">
-          R$ {{ product.price }}
-          <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
-        </h2>
-
+        {{ p.description }}
       </ion-card-content>
 
     </ion-card>
 
-  </ng-container>
+  </div>
 
 </ion-content>

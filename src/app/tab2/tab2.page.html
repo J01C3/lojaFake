@@ -1,63 +1,39 @@
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="products.length > 0">
 
-  <ion-card *ngIf="products.length > 0; else loading">
+  <ion-card class="product-card">
 
-    <img
-      [src]="products[index].image"
-      [alt]="products[index].title"
-    />
+    <div class="counter">
+     {{ index + 1 }} / {{ products.length }}
+    </div>
+
+    <img [src]="products[index].image" />
 
     <ion-card-header>
-
-      <ion-card-subtitle>
-        Produto {{ index + 1 }} de {{ products.length }}
-      </ion-card-subtitle>
-
-      <ion-card-title>
+      <ion-card-title class="title">
         {{ products[index].title }}
       </ion-card-title>
 
+      <ion-card-subtitle class="price">
+        <ion-icon name="cart-outline"></ion-icon>
+        <span>R$ {{ products[index].price }}</span>
+      </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-
-      <p class="description">
-        {{ products[index].description }}
-      </p>
-
-      <h2 class="price">
-        R$ {{ products[index].price }}
-
-        <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
-      </h2>
-
+      {{ products[index].description }}
     </ion-card-content>
 
   </ion-card>
 
-  <ng-template #loading>
-    <div class="loading">
-      <p>Carregando produtos...</p>
-    </div>
-  </ng-template>
+  <!-- SETAS -->
+  <div class="buttons">
 
-  <div class="buttons" *ngIf="products.length > 0">
-
-    <ion-button
-      fill="outline"
-      expand="block"
-      (click)="previousProduct()"
-      [disabled]="index === 0"
-    >
-      Produto Anterior
+    <ion-button fill="clear" (click)="prev()" [disabled]="index === 0">
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
 
-    <ion-button
-      expand="block"
-      (click)="nextProduct()"
-      [disabled]="index === products.length - 1"
-    >
-      Próximo Produto
+    <ion-button fill="clear" (click)="next()" [disabled]="index === products.length - 1">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-button>
 
   </div>
