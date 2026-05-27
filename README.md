@@ -118,6 +118,6 @@ src/
 
 # 👩‍💻 Desenvolvido por
 
-Joyce Silva 💜
+Joyce Do Vale Silva 💜
 
 
