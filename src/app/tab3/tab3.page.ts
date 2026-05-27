@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { MatButtonModule } from '@angular/material/button';
+
+import {
+  IonContent,
+  IonButton,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonIcon
+} from '@ionic/angular/standalone';
 
 import { ProductsService } from '../services/products';
 
@@ -15,8 +24,15 @@ import { cartOutline } from 'ionicons/icons';
   standalone: true,
   imports: [
     CommonModule,
-    IonicModule,
-    MatButtonModule
+
+    IonContent,
+    IonButton,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonIcon
   ]
 })
 export class Tab3Page implements OnInit {
@@ -26,7 +42,6 @@ export class Tab3Page implements OnInit {
 
   constructor(private service: ProductsService) {
 
-    // ícone do carrinho
     addIcons({
       'cart-outline': cartOutline
     });
@@ -38,7 +53,8 @@ export class Tab3Page implements OnInit {
       next: (res) => {
         this.products = res;
       },
-      error: (err) => console.error('Erro ao carregar produtos:', err)
+      error: (err) =>
+        console.error('Erro ao carregar produtos:', err)
     });
   }
 

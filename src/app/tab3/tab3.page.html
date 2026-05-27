@@ -1,12 +1,10 @@
 <ion-content class="ion-padding">
 
-<ion-button
-  class="toggle-btn"
-  expand="block"
-  fill="solid"
-  (click)="toggle()">
-  {{ show ? 'Ocultar produtos' : 'Mostrar produtos' }}
-</ion-button>
+    <div class="botao">
+      <ion-button class="toggle-btn" (click)="toggle()" slot="primary" fill="solid"> {{ show ? 'Ocultar produtos' : 'Mostrar produtos' }}
+      </ion-button>
+    </div>
+
 
   <div *ngIf="show">
 
